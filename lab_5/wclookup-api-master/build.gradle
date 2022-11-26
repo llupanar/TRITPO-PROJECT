@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.5'
+    id 'java'
+}
+
+group = 'com.explosion204'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'com.h2database', name: 'h2', version: h2Version
+    implementation group: 'org.postgresql', name: 'postgresql', version: postgresVersion
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: jaxbApiVersion
+
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: bootVersion, ext: 'pom'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: bootVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: bootVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: bootVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: bootVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: bootVersion
+    implementation group: 'javax.validation', name: 'validation-api', version: validationApiVersion
+    implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: jjwtVersion
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: jjwtVersion
+    runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: jjwtVersion
+    implementation group: 'com.google.api-client', name: 'google-api-client', version: googleApiClient
+
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: commonsLangVersion
+    implementation group: 'commons-codec', name: 'commons-codec', version: commonsCodecVersion
+
+
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+}
